@@ -1,0 +1,69 @@
+﻿<Window x:Class="KseniaNadbitova_PP1.Windows2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KseniaNadbitova_PP1"
+        mc:Ignorable="d"
+        Title="Капча" Height="450" Width="900" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.ColumnSpan="2"
+               Content="Текстовая капча" FontSize="24"
+               HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Ввод:" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtTextInput" Width="200" FontSize="20" Margin="10,0,0,0"/>
+            <Button x:Name="btnCheckText" Content="Проверить"
+                    FontSize="18" Margin="10,0,0,0" Padding="10,2"
+                    Click="btnCheckText_Click"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1"
+                Width="220" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="txtTextCaptcha" FontSize="28"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontStyle="Italic" FontWeight="Bold"/>
+        </Border>
+
+        <TextBlock x:Name="txtTextStatus" Grid.Row="2" Grid.ColumnSpan="2"
+                   FontSize="16" HorizontalAlignment="Center" Margin="0,5,0,20"
+                   Foreground="DarkRed"/>
+
+        <Label Grid.Row="3" Grid.ColumnSpan="2"
+               Content="Капча с картинками" FontSize="24"
+               HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Ввод:" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtImageInput" Width="200" FontSize="20" Margin="10,0,0,0"/>
+            <Button x:Name="btnCheckImage" Content="Проверить"
+                    FontSize="18" Margin="10,0,0,0" Padding="10,2"
+                    Click="btnCheckImage_Click"/>
+        </StackPanel>
+
+        <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="1"
+                Width="220" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="imgCaptcha" Stretch="Uniform"/>
+        </Border>
+
+        <TextBlock x:Name="txtImageStatus" Grid.Row="5" Grid.ColumnSpan="2"
+                   FontSize="16" HorizontalAlignment="Center" Margin="0,5,0,0"
+                   Foreground="DarkRed"/>
+    </Grid>
+</Window>
